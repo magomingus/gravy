@@ -6,7 +6,7 @@ from Globals import getenv
 from datetime import datetime, timedelta
 
 logging.basicConfig(
-    level=getenv("LOG_LEVEL"),
+    level=getenv("LOG_LEVEL"), 
     format=getenv("LOG_FORMAT"),
 )
 WORKERS = int(getenv("UVICORN_WORKERS"))
