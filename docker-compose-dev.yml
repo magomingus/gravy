@@ -6,7 +6,7 @@ services:
       DATABASE_NAME: ${DATABASE_NAME:-models/n3xt} 
       UVICORN_WORKERS: ${UVICORN_WORKERS:-10}
       n3xt_API_KEY: ${n3xt_API_KEY:-None} 
-      n3xt_URI: ${n3xt_URI:-http://n3xt:7437}
+      n3xt_URI: ${n3xt_URI:-http://n3xt:7437} 
       MAGIC_LINK_URL: ${AUTH_WEB:-http://localhost:3437}
       DISABLED_EXTENSIONS: ${DISABLED_EXTENSIONS}
       DISABLED_PROVIDERS: ${DISABLED_PROVIDERS}
