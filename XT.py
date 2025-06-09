@@ -35,7 +35,7 @@ import os
 import re
 
 
-class n3xt:
+class r136:
     def __init__(
         self,
         user: str,
@@ -59,7 +59,7 @@ class n3xt:
             self.conversation_id = self.conversation.get_conversation_id()
             self.conversation_name = conversation_name
         self.agent_name = agent_name
-        self.uri = getenv("n3xt_URI")
+        self.uri = getenv("r136_URI")
         if collection_id is not None:
             self.collection_id = str(collection_id)
         elif conversation_name:
@@ -199,7 +199,7 @@ class n3xt:
         **kwargs,
     ):
         """
-        Run inference on the n3xt agent
+        Run inference on the r136 agent
 
         Args:
             user_input (str): User input to the agent
@@ -1800,7 +1800,7 @@ class n3xt:
                     # Before logging the response, lets get all activities matching the `thinking_id` mermaid diagram
                     activities = c.get_subactivities(thinking_id)
                     if activities:
-                        activity_prompt = f"{new_prompt}\n\n{activities}\n\nRn3xtw the detailed activities list and create a mermaid diagram that describes the paths taken during the detailed activities that were performed based on the user input. This mermaid diagram should start with ```mermaid\nContent of the diagram\n```\ninside of the <answer> block as the final response. The activities describe the thoughts in steps that ultimately led to the response from the assistant to the user based on the user input. Be as detailed as possible with the diagram. Ensure each item in the diagram is in quotes."
+                        activity_prompt = f"{new_prompt}\n\n{activities}\n\nRr136w the detailed activities list and create a mermaid diagram that describes the paths taken during the detailed activities that were performed based on the user input. This mermaid diagram should start with ```mermaid\nContent of the diagram\n```\ninside of the <answer> block as the final response. The activities describe the thoughts in steps that ultimately led to the response from the assistant to the user based on the user input. Be as detailed as possible with the diagram. Ensure each item in the diagram is in quotes."
                         mermaid_diagram = await self.inference(
                             user_input=activity_prompt,
                             prompt_category="Default",
@@ -2148,14 +2148,14 @@ class n3xt:
         **kwargs,
     ):
         """
-        Converts a string to a Pydantic model using an n3xt agent.
+        Converts a string to a Pydantic model using an r136 agent.
 
         Args:
         input_string (str): The string to convert to a model.
         model (Type[BaseModel]): The Pydantic model to convert the string to.
         max_failures (int): The maximum number of times to retry the conversion if it fails.
         response_type (str): The type of response to return. Either 'json' or None. None will return the model.
-        **kwargs: Additional arguments to pass to the n3xt agent as prompt arguments.
+        **kwargs: Additional arguments to pass to the r136 agent as prompt arguments.
         """
         input_string = str(input_string)
         schema = self._generate_detailed_schema(model)
@@ -2367,7 +2367,7 @@ class n3xt:
         code: str,
         code_error: str,
         file_content: str,
-        file_prn3xtw: str = "",
+        file_prr136w: str = "",
         import_file: str = "",
         multifile: bool = False,
         failures: int = 0,
@@ -2378,7 +2378,7 @@ class n3xt:
             user_input=user_input,
             prompt_category="Default",
             prompt_name="Fix Code",
-            file_prn3xtw=file_prn3xtw,
+            file_prr136w=file_prr136w,
             import_file=import_file,
             code=code,
             code_error=str(code_error),
@@ -2402,7 +2402,7 @@ class n3xt:
                 else "Verify Code Interpreter"
             ),
             import_file=import_file,
-            file_prn3xtw=file_prn3xtw,
+            file_prr136w=file_prr136w,
             code=fixed_code,
             log_user_input=False,
             log_output=False,
@@ -2429,7 +2429,7 @@ class n3xt:
                 code=code_verification,
                 code_error=str(code_execution),
                 file_content=file_content,
-                file_prn3xtw=file_prn3xtw,
+                file_prr136w=file_prr136w,
                 import_file=import_file,
                 failures=failures,
                 max_failures=max_failures,
@@ -2501,7 +2501,7 @@ class n3xt:
                 return await self.analyze_user_input(user_input=user_input)
         if len(file_names) > 1:
             # Found multiple files, do things a little differently.
-            prn3xtws = []
+            prr136ws = []
             import_files = ""
             for file in file_names:
                 if import_files == "":
@@ -2512,9 +2512,9 @@ class n3xt:
                 file_content = open(file_path, "r").read()
                 lines = file_content.split("\n")
                 lines = lines[:2]
-                file_prn3xtw = "\n".join(lines)
-                prn3xtws.append(f"`{file_path}`\n```csv\n{file_prn3xtw}\n```")
-            file_prn3xtw = "\n".join(prn3xtws)
+                file_prr136w = "\n".join(lines)
+                prr136ws.append(f"`{file_path}`\n```csv\n{file_prr136w}\n```")
+            file_prr136w = "\n".join(prr136ws)
             self.conversation.log_interaction(
                 role=self.agent_name,
                 message=f"[SUBACTIVITY][{thinking_id}] Analyzing data from multiple files: {import_files}.",
@@ -2525,7 +2525,7 @@ class n3xt:
                 lines = lines[:5]
             else:
                 lines = lines[:2]
-            file_prn3xtw = "\n".join(lines)
+            file_prr136w = "\n".join(lines)
             self.conversation.log_interaction(
                 role=self.agent_name,
                 message=f"[SUBACTIVITY][{thinking_id}] Analyzing data from file `{file_name}`.",
@@ -2539,7 +2539,7 @@ class n3xt:
                 else "Code Interpreter"
             ),
             import_file=import_files if len(file_names) > 1 else file_path,
-            file_prn3xtw=file_prn3xtw,
+            file_prr136w=file_prr136w,
             log_user_input=False,
             log_output=False,
             browse_links=False,
@@ -2562,7 +2562,7 @@ class n3xt:
                 else "Verify Code Interpreter"
             ),
             import_file=import_file,
-            file_prn3xtw=file_prn3xtw,
+            file_prr136w=file_prr136w,
             code=code_interpreter,
             log_user_input=False,
             log_output=False,
@@ -2594,7 +2594,7 @@ class n3xt:
                 code=code_verification,
                 code_error=str(code_execution),
                 file_content=file_content,
-                file_prn3xtw=file_prn3xtw,
+                file_prr136w=file_prr136w,
                 import_file=import_file,
                 max_failures=max_failures,
             )
