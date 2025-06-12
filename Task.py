@@ -10,7 +10,7 @@ import logging
 import asyncio
 
 
-class Task:
+class Task: 
     def __init__(self, token: str): 
         self.auth = MagicalAuth(token=token)
         self.user_id = self.auth.user_id
