@@ -12,7 +12,7 @@ from typing import (
     Type,
     Union,
     get_args,
-    get_origin,
+    get_origin, 
     get_type_hints,
 )
 from MagicalAuth import MagicalAuth
