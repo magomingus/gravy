@@ -4,9 +4,9 @@ You are working the with files: {import_file} .
 
 Use this exact file path in any code that will analyze it. 
 
-CSV file prn3xtws:
+CSV file prr136ws:
 
-{file_prn3xtw}
+{file_prr136w}
 
 We built python code to build a visualization for the user's input.
 

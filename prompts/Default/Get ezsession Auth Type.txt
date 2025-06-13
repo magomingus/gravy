@@ -115,4 +115,4 @@ def get_session(**auth):
     return session
 ```
 
-Rn3xtw which auth type is used by {software_name} and respond only with the type that should be used with the `get_session` function.  Only a single word response is required.
+Rr136w which auth type is used by {software_name} and respond only with the type that should be used with the `get_session` function.  Only a single word response is required.
