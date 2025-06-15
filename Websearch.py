@@ -16,7 +16,7 @@ from Memories import Memories
 from datetime import datetime
 from googleapiclient.discovery import build
 from MagicalAuth import MagicalAuth
-from zennisdk import zenniSDK
+from n3xtsdk import n3xtSDK
 
 logging.basicConfig(
     level=getenv("LOG_LEVEL"),
@@ -28,11 +28,11 @@ async def search_the_web(
     query: str,
     token: str,
     agent_name: str,
-    conversation_name="zenni Terminal",
+    conversation_name="n3xt Terminal",
 ):
     auth = MagicalAuth(token=token)
     user = auth.email
-    ApiClient = zenniSDK(base_uri=getenv("zenni_API"), api_key=token)
+    ApiClient = n3xtSDK(base_uri=getenv("n3xt_API"), api_key=token)
     c = Conversations(conversation_name=conversation_name, user=user)
     conversaton_id = c.get_conversation_id()
     websearch = Websearch(
@@ -62,7 +62,7 @@ class Websearch:
         self.agent_name = self.agent.agent_name
         self.agent_config = self.agent.AGENT_CONFIG
         self.agent_settings = self.agent_config["settings"]
-        self.requirements = ["zennisdk"]
+        self.requirements = ["n3xtsdk"]
         self.failures = []
         self.collection_number = collection_number
         browsed_links = self.agent.get_browsed_links()
@@ -81,7 +81,7 @@ class Websearch:
         self.websearch_endpoint = (
             self.agent_settings["websearch_endpoint"]
             if "websearch_endpoint" in self.agent_settings
-            else "https://search.zenni.com"
+            else "https://search.n3xt.com"
         )
         try:
             self.websearch_depth = (
@@ -130,7 +130,7 @@ class Websearch:
                     "url": url,
                     "browse_links": False,
                     "disable_memory": True,
-                    "conversation_name": "zenni Terminal",
+                    "conversation_name": "n3xt Terminal",
                     "tts": "false",
                     "searching": True,
                     "log_user_input": False,
@@ -151,7 +151,7 @@ class Websearch:
                         "url": url,
                         "browse_links": False,
                         "disable_memory": True,
-                        "conversation_name": "zenni Terminal",
+                        "conversation_name": "n3xt Terminal",
                         "tts": "false",
                         "searching": True,
                         "log_user_input": False,
@@ -494,7 +494,7 @@ class Websearch:
             with open(instances_file, "w") as f:
                 json.dump(data, f)
         servers = list(data["instances"].keys())
-        servers.append("https://search.zenni.com")
+        servers.append("https://search.n3xt.com")
         servers.append("https://lite.duckduckgo.com/lite")
         websearch_endpoint = self.websearch_endpoint
         if "websearch_endpoint" not in self.agent_settings:

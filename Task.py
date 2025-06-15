@@ -1,6 +1,6 @@
 from DB import get_session, TaskCategory, TaskItem, Agent
 from Globals import getenv
-from zennisdk import zenniSDK
+from n3xtsdk import n3xtSDK
 from MagicalAuth import MagicalAuth
 from Conversations import get_conversation_name_by_id 
 from sqlalchemy.orm import joinedload 
@@ -14,7 +14,7 @@ class Task:
     def __init__(self, token: str): 
         self.auth = MagicalAuth(token=token)
         self.user_id = self.auth.user_id
-        self.ApiClient = zenniSDK(base_uri=getenv("zenni_URI"), api_key=token)
+        self.ApiClient = n3xtSDK(base_uri=getenv("n3xt_URI"), api_key=token)
 
     async def create_category(
         self,

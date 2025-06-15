@@ -94,5 +94,5 @@ class GoogleProvider:
         filename = f"{uuid.uuid4()}.mp3"
         mp3_path = os.path.join(os.getcwd(), "WORKSPACE", filename)
         tts.save(mp3_path)
-        zenni_uri = getenv("zenni_URI")
-        return f"{zenni_uri}/outputs/{filename}"
+        n3xt_uri = getenv("n3xt_URI")
+        return f"{n3xt_uri}/outputs/{filename}"

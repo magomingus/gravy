@@ -54,11 +54,11 @@ except ImportError:
 
 from peft import PeftModel
 from bitsandbytes.functional import dequantize_4bit
-from XT import zenni
+from XT import n3xt
 
 
 def fine_tune_llm(
-    agent_name: str = "zenni",
+    agent_name: str = "n3xt",
     dataset_name: str = "dataset",
     model_name: str = "unsloth/mistral-7b-v0.2",
     max_seq_length: int = 16384,
@@ -68,14 +68,14 @@ def fine_tune_llm(
     api_key: str = "",
 ):
     output_path = "./models"
-    # Step 1: Build zenni dataset
-    zenni = zenni(
+    # Step 1: Build n3xt dataset
+    n3xt = n3xt(
         user=user,
         api_key=api_key,
         agent_name=agent_name,
         conversation_name=dataset_name,
     )
-    agent_settings = zenni.agent_settings
+    agent_settings = n3xt.agent_settings
     if not agent_settings:
         agent_settings = {}
     huggingface_api_key = (
@@ -83,7 +83,7 @@ def fine_tune_llm(
         if "HUGGINGFACE_API_KEY" in agent_settings
         else None
     )
-    response = zenni.create_dataset_from_memories(
+    response = n3xt.create_dataset_from_memories(
         dataset_name=dataset_name, batch_size=5
     )
     dataset_name = (
@@ -91,7 +91,7 @@ def fine_tune_llm(
     )
     dataset_path = f"./WORKSPACE/{agent_name}/datasets/{dataset_name}.json"
     agent_settings["training"] = True
-    zenni.agent_interactions.agent.update_agent_config(
+    n3xt.agent_interactions.agent.update_agent_config(
         new_config=agent_settings, config_key="settings"
     )
     # Step 2: Create qLora adapter
@@ -173,7 +173,7 @@ def fine_tune_llm(
             huggingface_output_path, use_temp_dir=False, private=private_repo
         )
     agent_settings["training"] = False
-    zenni.agent_interactions.agent.update_agent_config(
+    n3xt.agent_interactions.agent.update_agent_config(
         new_config=agent_settings, config_key="settings"
     )
 
@@ -181,12 +181,12 @@ def fine_tune_llm(
 if __name__ == "__main__":
     # Usage
     fine_tune_llm(
-        agent_name="zenni",
+        agent_name="n3xt",
         dataset_name="dataset",
         model_name="unsloth/llama-3-8b-Instruct-bnb-4bit",
         max_seq_length=16384,
         huggingface_output_path="JoshXT/finetuned-llama-3-8b",
         private_repo=True,
         user="user",
-        api_key="Your zenni API Key",
+        api_key="Your n3xt API Key",
     )
