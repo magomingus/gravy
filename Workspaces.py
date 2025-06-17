@@ -11,7 +11,7 @@ except ImportError:
     from libcloud.storage.types import Provider, ContainerDoesNotExistError
 from libcloud.storage.providers import get_driver
 from contextlib import contextmanager
-from typing import Optional, Union, TextIO, BinaryIO, Generator, List
+from typing import Optional, Union, TextIO, BinaryIO, Generator, List 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import threading
