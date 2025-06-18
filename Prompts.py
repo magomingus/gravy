@@ -6,7 +6,7 @@ import os
  
 class Prompts:
     def __init__(self, user=DEFAULT_USER):
-        self.user = user
+        self.user = user 
         self.user_id = get_user_id(user)
 
     def add_prompt(self, prompt_name, prompt, prompt_category="Default"):
