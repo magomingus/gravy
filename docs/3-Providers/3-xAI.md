@@ -1,7 +1,7 @@
 # xAI
 
 - [xAI](https://docs.x.ai/docs)
-- [n3xt](https://github.com/sr_fede/n3xt)
+- [r136](https://github.com/sr_fede/r136)
 
 ⚠️ **Please note that using some AI providers, such as xAI's API, can be expensive. Monitor your usage carefully to avoid incurring unexpected costs. We're NOT responsible for your usage under any circumstance.**
 

@@ -1,16 +1,16 @@
 services:
-  n3xt:
+  r136:
     init: true
     environment:
       DATABASE_TYPE: ${DATABASE_TYPE:-sqlite}
-      DATABASE_NAME: ${DATABASE_NAME:-models/n3xt}
+      DATABASE_NAME: ${DATABASE_NAME:-models/r136}
       UVICORN_WORKERS: ${UVICORN_WORKERS:-10} 
-      n3xt_API_KEY: ${n3xt_API_KEY:-None} 
-      n3xt_URI: ${n3xt_URI:-http://n3xt:7437}
+      r136_API_KEY: ${r136_API_KEY:-None} 
+      r136_URI: ${r136_URI:-http://r136:7437}
       MAGIC_LINK_URL: ${AUTH_WEB:-http://localhost:3437}
       DISABLED_EXTENSIONS: ${DISABLED_EXTENSIONS}
       DISABLED_PROVIDERS: ${DISABLED_PROVIDERS} 
-      WORKING_DIRECTORY: ${WORKING_DIRECTORY:-/n3xt/WORKSPACE}
+      WORKING_DIRECTORY: ${WORKING_DIRECTORY:-/r136/WORKSPACE}
       REGISTRATION_DISABLED: ${REGISTRATION_DISABLED:-false}
       TOKENIZERS_PARALLELISM: "false"
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
@@ -27,11 +27,11 @@ services:
       TESLA_CLIENT_ID: ${TESLA_CLIENT_ID}
       TESLA_CLIENT_SECRET: ${TESLA_CLIENT_SECRET}
       STORAGE_BACKEND: ${STORAGE_BACKEND:-local}
-      STORAGE_CONTAINER: ${STORAGE_CONTAINER:-n3xt-workspace}
+      STORAGE_CONTAINER: ${STORAGE_CONTAINER:-r136-workspace}
       B2_KEY_ID: ${B2_KEY_ID:-}
       B2_APPLICATION_KEY: ${B2_APPLICATION_KEY:-}
       B2_REGION: ${B2_REGION:-us-west-002}
-      S3_BUCKET: ${S3_BUCKET:-n3xt-workspace}
+      S3_BUCKET: ${S3_BUCKET:-r136-workspace}
       S3_ENDPOINT: ${S3_ENDPOINT:-http://minio:9000}
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-minioadmin}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-minioadmin}
@@ -39,7 +39,7 @@ services:
       AZURE_STORAGE_ACCOUNT_NAME: ${AZURE_STORAGE_ACCOUNT_NAME:-}
       AZURE_STORAGE_KEY: ${AZURE_STORAGE_KEY:-}
       SEED_DATA: ${SEED_DATA:-true}
-      AGENT_NAME: ${n3xt_AGENT:-XT}
+      AGENT_NAME: ${r136_AGENT:-XT}
       AGENT_PERSONA: ${AGENT_PERSONA}
       TRAINING_URLS: ${TRAINING_URLS}
       ENABLED_COMMANDS: ${ENABLED_COMMANDS}
@@ -69,30 +69,30 @@ services:
       GRAPHIQL: ${GRAPHIQL:-true}
       TZ: ${TZ:-America/New_York}
     ports:
-      - "${n3xt_PORT:-7437}:7437"
+      - "${r136_PORT:-7437}:7437"
     volumes:
-      - ./models:/n3xt/models
-      - ./WORKSPACE:/n3xt/WORKSPACE
+      - ./models:/r136/models
+      - ./WORKSPACE:/r136/WORKSPACE
       - /var/run/docker.sock:/var/run/docker.sock
-  n3xtinteractive:
+  r136interactive:
     init: true
     environment:
       MODE: production
       NEXT_TELEMETRY_DISABLED: 1
-      n3xt_AGENT: ${n3xt_AGENT:-XT}
-      n3xt_FOOTER_MESSAGE: ${n3xt_FOOTER_MESSAGE:-n3xt 2024}
-      n3xt_SERVER: ${n3xt_SERVER:-http://localhost:7437}
-      APP_DESCRIPTION: ${APP_DESCRIPTION-n3xt is an advanced artificial intelligence agent orchestration agent.}
-      APP_NAME: ${APP_NAME:-n3xt}
+      r136_AGENT: ${r136_AGENT:-XT}
+      r136_FOOTER_MESSAGE: ${r136_FOOTER_MESSAGE:-r136 2024}
+      r136_SERVER: ${r136_SERVER:-http://localhost:7437}
+      APP_DESCRIPTION: ${APP_DESCRIPTION-r136 is an advanced artificial intelligence agent orchestration agent.}
+      APP_NAME: ${APP_NAME:-r136}
       APP_URI: ${APP_URI:-http://localhost:3437}
       LOG_VERBOSITY_SERVER: ${LOG_VERBOSITY_SERVER:-3}
-      n3xt_FILE_UPLOAD_ENABLED: ${n3xt_FILE_UPLOAD_ENABLED:-true}
-      n3xt_VOICE_INPUT_ENABLED: ${n3xt_VOICE_INPUT_ENABLED:-true}
-      n3xt_RLHF: ${n3xt_RLHF:-true}
-      n3xt_ALLOW_MESSAGE_EDITING: ${n3xt_ALLOW_MESSAGE_EDITING:-true}
-      n3xt_ALLOW_MESSAGE_DELETION: ${n3xt_ALLOW_MESSAGE_DELETION:-true}
-      n3xt_SHOW_OVERRIDE_SWITCHES: ${n3xt_SHOW_OVERRIDE_SWITCHES:-tts,websearch,analyze-user-input}
-      n3xt_CONVERSATION_MODE: ${n3xt_CONVERSATION_MODE:-select}
+      r136_FILE_UPLOAD_ENABLED: ${r136_FILE_UPLOAD_ENABLED:-true}
+      r136_VOICE_INPUT_ENABLED: ${r136_VOICE_INPUT_ENABLED:-true}
+      r136_RLHF: ${r136_RLHF:-true}
+      r136_ALLOW_MESSAGE_EDITING: ${r136_ALLOW_MESSAGE_EDITING:-true}
+      r136_ALLOW_MESSAGE_DELETION: ${r136_ALLOW_MESSAGE_DELETION:-true}
+      r136_SHOW_OVERRIDE_SWITCHES: ${r136_SHOW_OVERRIDE_SWITCHES:-tts,websearch,analyze-user-input}
+      r136_CONVERSATION_MODE: ${r136_CONVERSATION_MODE:-select}
       INTERACTIVE_MODE: ${INTERACTIVE_MODE:-chat}
       ALLOW_EMAIL_SIGN_IN: ${ALLOW_EMAIL_SIGN_IN:-true}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
@@ -101,7 +101,7 @@ services:
       TESLA_CLIENT_ID: ${TESLA_CLIENT_ID}
       TZ: ${TZ:-America/New_York}
     ports:
-      - "${n3xt_INTERACTIVE_PORT:-3437}:3437"
+      - "${r136_INTERACTIVE_PORT:-3437}:3437"
     restart: unless-stopped
     volumes:
       - ./node_modules:/app/node_modules

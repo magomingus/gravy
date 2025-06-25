@@ -1,5 +1,5 @@
 include requirements.txt
-recursive-include n3xt *
+recursive-include r136 *
 recursive-include tests *
 recursive-include streamlit *
 recursive-include docs *  

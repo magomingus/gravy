@@ -60,8 +60,8 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-contact@n3xt.com.
-All complaints will be rn3xtwed and investigated promptly and fairly.
+contact@r136.com.
+All complaints will be rr136wed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.

@@ -1,17 +1,17 @@
-# Preinstalled n3xt ISOs
+# Preinstalled r136 ISOs
 
-You can download preinstalled n3xt ISOs from the [Playbook](https://www.playbook.com/s/greengecko/n3xt-isos) website.
+You can download preinstalled r136 ISOs from the [Playbook](https://www.playbook.com/s/greengecko/r136-isos) website.
 
-## n3xt.iso
+## r136.iso
 
 - **Description:** Includes the JoshXT workstation script preinstalled.
 
-## n3xtinstalled.iso
+## r136installed.iso
 
-- **Description:** Includes the JoshXT workstation script preinstalled. Also, this ISO includes n3xt preinstalled on Docker.
+- **Description:** Includes the JoshXT workstation script preinstalled. Also, this ISO includes r136 preinstalled on Docker.
 
-Be sure to check out the `sha256sums.txt` located [here](https://www.playbook.com/s/greengecko/n3xt-isos?assetToken=F9FXZkX6N3NqHGMne6m4v2cz) to verify your file is safe and has not been altered.
+Be sure to check out the `sha256sums.txt` located [here](https://www.playbook.com/s/greengecko/r136-isos?assetToken=F9FXZkX6N3NqHGMne6m4v2cz) to verify your file is safe and has not been altered.
 
-Username/Password: n3xt
+Username/Password: r136
 
 Feel free to download the ISO that suits your requirements best!

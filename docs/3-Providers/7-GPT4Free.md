@@ -1,7 +1,7 @@
 # GPT4Free
 
 - [GPT4Free](https://github.com/xtekky/gpt4free)
-- [n3xt](https://github.com/sr_fede/n3xt)
+- [r136](https://github.com/sr_fede/r136)
 
 ## Disclaimer
 

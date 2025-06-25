@@ -1,13 +1,13 @@
 # Environment Variables
 
-The script sets up various environment variables for n3xt. Some key variables and their purposes include:
+The script sets up various environment variables for r136. Some key variables and their purposes include:
 
-- `n3xt_API_KEY`: API key for n3xt (**automatically generated if not provided**)
-- `n3xt_URI`: URI for the n3xt API
-- `n3xt_BRANCH`: n3xt version to use (`stable` or `dev`)
-- `n3xt_AUTO_UPDATE`: Whether to automatically update n3xt
-- `n3xt_RLHF`: Enable reinforcement learning from hn3xtn feedback (thumbs up/down buttons in UI)
-- `n3xt_SHOW_SELECTION`: Controls which dropdowns are shown in the UI. Comma separated values. (default is `agent,conversation`)
+- `r136_API_KEY`: API key for r136 (**automatically generated if not provided**)
+- `r136_URI`: URI for the r136 API
+- `r136_BRANCH`: r136 version to use (`stable` or `dev`)
+- `r136_AUTO_UPDATE`: Whether to automatically update r136
+- `r136_RLHF`: Enable reinforcement learning from hr136n feedback (thumbs up/down buttons in UI)
+- `r136_SHOW_SELECTION`: Controls which dropdowns are shown in the UI. Comma separated values. (default is `agent,conversation`)
 - `AUTH_PROVIDER`: Authentication provider (`none` or `magicalauth`)
 - `INTERACTIVE_MODE`: Should always be set to `chat` (`form` mode is experimental)
 - `THEME_NAME`: UI color scheme (`default`, `christmas`, `conspiracy`, `doom`, `easter`, `halloween`, `valentines`)

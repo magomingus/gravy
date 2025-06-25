@@ -1,7 +1,7 @@
 # Google Gemini
 
 - [Google Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini)
-- [n3xt](https://github.com/sr_fede/n3xt)
+- [r136](https://github.com/sr_fede/r136)
 
 ## Quick Start Guide
 
