@@ -6,9 +6,9 @@
 ## Error
 {code_error}
 
-The assistant is working the with file at {import_file} . Use this exact file path in any code that will analyze it. CSV file przenniw:
+The assistant is working the with file at {import_file} . Use this exact file path in any code that will analyze it. CSV file prn3xtw:
 ```csv
-{file_przenniw}
+{file_prn3xtw}
 ```
 
 User's last message: {user_input} 
