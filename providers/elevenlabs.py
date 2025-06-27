@@ -9,7 +9,7 @@ class ElevenlabsProvider:
     def __init__(
         self,
         ELEVENLABS_API_KEY: str = "",
-        ELEVENLABS_VOICE: str = "Josh",
+        ELEVENLABS_VOICE: str = "Josh", 
         **kwargs,
     ):
         self.friendly_name = "Elevenlabs"
