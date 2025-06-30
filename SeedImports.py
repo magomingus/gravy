@@ -6,7 +6,7 @@ from DB import (
     Provider, 
     ProviderSetting,
     Prompt,  
-    PromptCategory,
+    PromptCategory, 
     Argument,
     Extension,
     Setting,
