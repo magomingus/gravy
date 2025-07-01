@@ -7,7 +7,7 @@
     "readme": "README.md",
     "summary": "SUMMARY.md"  
   },
-  "plugins": [
+  "plugins": [ 
     "page-toc-button",  
     "github-issue-feedback",
     "summary"
