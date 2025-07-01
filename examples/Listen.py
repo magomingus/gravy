@@ -18,10 +18,10 @@ except ImportError:
     import pyaudio
 
 try:
-    from zennisdk import zenniSDK
+    from n3xtsdk import n3xtSDK
 except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "zennisdk"])
-    from zennisdk import zenniSDK
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "n3xtsdk"])
+    from n3xtsdk import n3xtSDK
 
 try:
     from faster_whisper import WhisperModel
@@ -44,11 +44,11 @@ except ImportError:
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
-    filename="zenni_listen.log",
+    filename="n3xt_listen.log",
 )
 
 
-class zenniListen:
+class n3xtListen:
     def __init__(
         self,
         server="http://localhost:7437",
@@ -58,7 +58,7 @@ class zenniListen:
         whisper_model="base.en",
         wake_word="hey assistant",
     ):
-        self.sdk = zenniSDK(base_uri=server, api_key=api_key)
+        self.sdk = n3xtSDK(base_uri=server, api_key=api_key)
         self.agent_name = agent_name
         self.wake_word = wake_word.lower()
         self.wake_functions = {"chat": self.default_voice_chat}
@@ -348,12 +348,12 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="zenni Voice Assistant with Continuous Recording"
+        description="n3xt Voice Assistant with Continuous Recording"
     )
     parser.add_argument(
-        "--server", default="http://localhost:7437", help="zenni server URL"
+        "--server", default="http://localhost:7437", help="n3xt server URL"
     )
-    parser.add_argument("--api_key", default="", help="zenni API key")
+    parser.add_argument("--api_key", default="", help="n3xt API key")
     parser.add_argument("--agent_name", default="gpt4free", help="Name of the agent")
     parser.add_argument(
         "--conversation_name", default="", help="Name of the conversation"
@@ -368,7 +368,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     try:
-        listener = zenniListen(
+        listener = n3xtListen(
             server=args.server,
             api_key=args.api_key,
             agent_name=args.agent_name,
@@ -378,5 +378,5 @@ if __name__ == "__main__":
         )
         listener.listen()
     except Exception as e:
-        logging.error(f"Error initializing or running zenniListen: {str(e)}")
+        logging.error(f"Error initializing or running n3xtListen: {str(e)}")
         logging.debug(traceback.format_exc())

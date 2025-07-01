@@ -1,4 +1,4 @@
-# zenni
+# n3xt
 
 ## Quick Start Guide
 
@@ -25,8 +25,8 @@ Provide the following prerequisites based on the Operating System you use.
 If you're using Linux, you may need to prefix the `python` command with `sudo` depending on your system configuration.
 
 ```bash
-git clone https://github.com/stevz58/zenni
-cd zenni
+git clone https://github.com/sr_fede/n3xt
+cd n3xt
 python start.py
 ```
 
@@ -43,7 +43,7 @@ Run the script with Python:
 python start.py
 ```
 
-To run zenni with ezLocalai, use the `--with-ezlocalai` flag:
+To run n3xt with ezLocalai, use the `--with-ezlocalai` flag:
 
 ```bash
 python start.py --with-ezlocalai
@@ -52,33 +52,33 @@ python start.py --with-ezlocalai
 You can also use command-line arguments to set specific environment variables to run in different ways. For example, to use the development branch and enable auto-updates, run:
 
 ```bash
-python start.py --zenni-branch dev --zenni-auto-update true --with-ezlocalai
+python start.py --n3xt-branch dev --n3xt-auto-update true --with-ezlocalai
 ```
 
-- Access the zenni Management interface at <http://localhost:8501> to create and manage your agents, prompts, chains, and configurations.
-- Access the zenni Interactive interface at <http://localhost:3437> to interact with your configured agents.
-- Access the zenni API documentation at <http://localhost:7437>
+- Access the n3xt Management interface at <http://localhost:8501> to create and manage your agents, prompts, chains, and configurations.
+- Access the n3xt Interactive interface at <http://localhost:3437> to interact with your configured agents.
+- Access the n3xt API documentation at <http://localhost:7437>
 
 ### Command-line Options
 
 The script supports setting any of the environment variables via command-line arguments. Here's a detailed list of available options:
 
-1. `--zenni-api-key`: Set the zenni API key (automatically generated if not provided)
-2. `--zenni-uri`: Set the zenni URI (default: `http://localhost:7437`)
-3. `--zenni-agent`: Set the default zenni agent (default: `zenni`)
-4. `--zenni-branch`: Choose between `stable` and `dev` branches
-5. `--zenni-file-upload-enabled`: Enable or disable file uploads (default: `true`)
-6. `--zenni-voice-input-enabled`: Enable or disable voice input (default: `true`)
-7. `--zenni-footer-message`: Set the footer message (default: `Powered by zenni`)
-8. `--zenni-require-api-key`: Require API key for access (default: `false`)
-9. `--zenni-rlhf`: Enable or disable reinforcement learning from hzennin feedback (default: `true`)
-10. `--zenni-show-selection`: Set which selectors to show in the UI (default: `conversation,agent`)
-11. `--zenni-show-agent-bar`: Show or hide the agent bar in the UI (default: `true`)
-12. `--zenni-show-app-bar`: Show or hide the app bar in the UI (default: `true`)
-13. `--zenni-conversation-mode`: Set the conversation mode (default: `select`)
+1. `--n3xt-api-key`: Set the n3xt API key (automatically generated if not provided)
+2. `--n3xt-uri`: Set the n3xt URI (default: `http://localhost:7437`)
+3. `--n3xt-agent`: Set the default n3xt agent (default: `n3xt`)
+4. `--n3xt-branch`: Choose between `stable` and `dev` branches
+5. `--n3xt-file-upload-enabled`: Enable or disable file uploads (default: `true`)
+6. `--n3xt-voice-input-enabled`: Enable or disable voice input (default: `true`)
+7. `--n3xt-footer-message`: Set the footer message (default: `Powered by n3xt`)
+8. `--n3xt-require-api-key`: Require API key for access (default: `false`)
+9. `--n3xt-rlhf`: Enable or disable reinforcement learning from hn3xtn feedback (default: `true`)
+10. `--n3xt-show-selection`: Set which selectors to show in the UI (default: `conversation,agent`)
+11. `--n3xt-show-agent-bar`: Show or hide the agent bar in the UI (default: `true`)
+12. `--n3xt-show-app-bar`: Show or hide the app bar in the UI (default: `true`)
+13. `--n3xt-conversation-mode`: Set the conversation mode (default: `select`)
 14. `--allowed-domains`: Set allowed domains for API access (default: `*`)
 15. `--app-description`: Set the application description
-16. `--app-name`: Set the application name (default: `zenni Chat`)
+16. `--app-name`: Set the application name (default: `n3xt Chat`)
 17. `--app-uri`: Set the application URI (default: `http://localhost:3437`)
 18. `--auth-web`: Set the authentication web URI (default: `http://localhost:3437/user`)
 19. `--auth-provider`: Set the authentication provider (options: `none`, `magicalauth`)
@@ -96,15 +96,15 @@ The script supports setting any of the environment variables via command-line ar
 31. `--theme-name`: Set the UI theme (options: `default`, `christmas`, `conspiracy`, `doom`, `easter`, `halloween`, `valentines`)
 32. `--allow-email-sign-in`: Allow email sign-in (default: `true`)
 33. `--database-type`: Set the database type (options: `sqlite`, `postgres`)
-34. `--database-name`: Set the database name (default: `models/zenni`)
+34. `--database-name`: Set the database name (default: `models/n3xt`)
 35. `--log-level`: Set the logging level (default: `INFO`)
 36. `--log-format`: Set the log format (default: `%(asctime)s | %(levelname)s | %(message)s`)
 38. `--uvicorn-workers`: Set the number of Uvicorn workers (default: `10`)
-39. `--zenni-auto-update`: Enable or disable auto-updates (default: `true`)
+39. `--n3xt-auto-update`: Enable or disable auto-updates (default: `true`)
 
 Options specific to ezLocalai:
 
-1. `--with-ezlocalai`: Start zenni with ezLocalai integration.
+1. `--with-ezlocalai`: Start n3xt with ezLocalai integration.
 2. `--ezlocalai-uri`: Set the ezLocalai URI (default: `http://{local_ip}:8091`)
 3. `--default-model`: Set the default language model for ezLocalai (default: `QuantFactory/dolphin-2.9.2-qwen2-7b-GGUF`)
 4. `--vision-model`: Set the vision model for ezLocalai (default: `deepseek-ai/deepseek-vl-1.3b-chat`)
@@ -122,9 +122,9 @@ python start.py --help
 
 After setting up the environment variables and ensuring Docker and Docker Compose are installed, the script will:
 
-1. Stop any running zenni Docker containers
+1. Stop any running n3xt Docker containers
 2. Pull the latest Docker images (if auto-update is enabled)
-3. Start the zenni services using Docker Compose
+3. Start the n3xt services using Docker Compose
 
 ## Troubleshooting
 
@@ -138,6 +138,6 @@ After setting up the environment variables and ensuring Docker and Docker Compos
 
 ## Security Considerations
 
-- The `zenni_API_KEY` is automatically generated if not provided. Ensure to keep this key secure and do not share it publicly.
+- The `n3xt_API_KEY` is automatically generated if not provided. Ensure to keep this key secure and do not share it publicly.
 - When using authentication providers (GitHub, Google, Microsoft), ensure that the client IDs and secrets are kept confidential.
 - Be cautious when enabling file uploads and voice input, as these features may introduce potential security risks if not properly managed.

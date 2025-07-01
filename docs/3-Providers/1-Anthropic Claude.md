@@ -1,7 +1,7 @@
 # Anthropic Claude
 
 - [Anthropic Claude](https://console.anthropic.com/docs/access)
-- [zenni](https://github.com/stevz58/zenni)
+- [n3xt](https://github.com/sr_fede/n3xt)
 
 ## Quick Start Guide
 

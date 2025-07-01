@@ -67,8 +67,8 @@ signal.signal(signal.SIGTERM, signal_handler)
 signal.signal(signal.SIGINT, signal_handler)
 
 app = FastAPI(
-    title="zenni",
-    description="zenni is an Artificial Intelligence Automation platform for creating and managing AI agents. Visit the GitHub repo for more information or to report issues. https://github.com/stevz58/zenni/",
+    title="n3xt",
+    description="n3xt is an Artificial Intelligence Automation platform for creating and managing AI agents. Visit the GitHub repo for more information or to report issues. https://github.com/sr_fede/n3xt/",
     version=version,
     docs_url="/",
     lifespan=lifespan,

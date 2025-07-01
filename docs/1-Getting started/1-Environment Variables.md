@@ -1,13 +1,13 @@
 # Environment Variables
 
-The script sets up various environment variables for zenni. Some key variables and their purposes include:
+The script sets up various environment variables for n3xt. Some key variables and their purposes include:
 
-- `zenni_API_KEY`: API key for zenni (**automatically generated if not provided**)
-- `zenni_URI`: URI for the zenni API
-- `zenni_BRANCH`: zenni version to use (`stable` or `dev`)
-- `zenni_AUTO_UPDATE`: Whether to automatically update zenni
-- `zenni_RLHF`: Enable reinforcement learning from hzennin feedback (thumbs up/down buttons in UI)
-- `zenni_SHOW_SELECTION`: Controls which dropdowns are shown in the UI. Comma separated values. (default is `agent,conversation`)
+- `n3xt_API_KEY`: API key for n3xt (**automatically generated if not provided**)
+- `n3xt_URI`: URI for the n3xt API
+- `n3xt_BRANCH`: n3xt version to use (`stable` or `dev`)
+- `n3xt_AUTO_UPDATE`: Whether to automatically update n3xt
+- `n3xt_RLHF`: Enable reinforcement learning from hn3xtn feedback (thumbs up/down buttons in UI)
+- `n3xt_SHOW_SELECTION`: Controls which dropdowns are shown in the UI. Comma separated values. (default is `agent,conversation`)
 - `AUTH_PROVIDER`: Authentication provider (`none` or `magicalauth`)
 - `INTERACTIVE_MODE`: Should always be set to `chat` (`form` mode is experimental)
 - `THEME_NAME`: UI color scheme (`default`, `christmas`, `conspiracy`, `doom`, `easter`, `halloween`, `valentines`)

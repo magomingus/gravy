@@ -1,7 +1,7 @@
 # Google Gemini
 
 - [Google Gemini](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini)
-- [zenni](https://github.com/stevz58/zenni)
+- [n3xt](https://github.com/sr_fede/n3xt)
 
 ## Quick Start Guide
 
